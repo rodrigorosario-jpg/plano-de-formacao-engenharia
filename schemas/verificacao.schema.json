@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/verificacao/v1",
+  "title": "Verificação de lista (exercicios/<código>/verificacao/<lista>.yml)",
+  "description": "Mapa de itens e forma de conferir cada gabarito. Formato em skills/estudo-guiado/references/exercicios.md, seções 4 e 5.",
+  "type": "object",
+  "required": ["lista", "gabarito", "itens"],
+  "additionalProperties": false,
+  "properties": {
+    "lista": {"type": "string", "pattern": "^exercicios/[^/]+/[^/]+\\.md$"},
+    "gabarito": {"type": "string", "pattern": "^exercicios/[^/]+/gabaritos/[^/]+\\.md$"},
+    "itens": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["item", "competencia", "tipo_item", "nivel"],
+        "additionalProperties": false,
+        "properties": {
+          "item": {"type": "integer", "minimum": 1},
+          "competencia": {"type": "string", "pattern": "^[A-Z]{1,2}[0-9]+\\.c[0-9]{2}$"},
+          "tipo_item": {"enum": ["fluencia", "metodos", "simplificacao", "armadilha_simplificacao", "critico", "ancora", "fixacao", "diagnostico"]},
+          "nivel": {"type": "integer", "minimum": 1, "maximum": 5, "description": "Dificuldade do exercício (catalogo/escalas.yml)."},
+          "calculo": {"type": ["string", "number"]},
+          "predicado": {"type": "string", "minLength": 1},
+          "variavel": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"},
+          "intervalo": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+          "codigo": {"type": "string", "minLength": 1},
+          "revisao": {"enum": ["independente", "releitura"]},
+          "nota": {"type": "string", "minLength": 1}
+        },
+        "anyOf": [
+          {"required": ["calculo"]},
+          {"required": ["predicado"]},
+          {"required": ["codigo"]},
+          {"required": ["revisao"]}
+        ],
+        "description": "Falta a forma de conferir: calculo, predicado, codigo ou revisao.",
+        "allOf": [
+          {"if": {"required": ["predicado"]}, "then": {"required": ["intervalo"]}},
+          {"if": {"required": ["revisao"]}, "then": {"required": ["nota"]}}
+        ]
+      }
+    }
+  }
+}

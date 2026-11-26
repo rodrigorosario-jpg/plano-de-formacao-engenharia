@@ -1,0 +1,58 @@
+# As duas escalas do plano. Este arquivo é a fonte de verdade das duas.
+# `dominio`: domínio da disciplina, usado em `nivel_alvo` e `nivel_atingido` (1 a 7).
+#   Origem: Mapa de Formação, rev. 74, seção 12.1.
+# `dificuldade_exercicio`: dificuldade de cada item de lista, usada em `nivel` das verificações e de registro/respostas.csv (1 a 5).
+#   A tabela "Níveis de exercício" de AVALIACOES.md repete esta escala; scripts/catalogo.py confere que as duas batem.
+schema_version: 1
+dominio:
+- nivel: 1
+  nome: Reconhecimento
+  definicao: Conheço os conceitos
+  evidencia: Mapa conceitual de uma página feito sem consulta; acerto de 80% em um questionário de definições
+  carga_tipica: 20–40 h
+- nivel: 2
+  nome: Compreensão
+  definicao: Explico os mecanismos
+  evidencia: Explicação escrita de cada mecanismo central, com exemplo próprio e um caso em que ele falha
+  carga_tipica: 40–70 h
+- nivel: 3
+  nome: Aplicação
+  definicao: Resolvo problemas
+  evidencia: 70% em prova antiga do curso de referência, no tempo regulamentar e sem consulta
+  carga_tipica: 70–130 h
+- nivel: 4
+  nome: Implementação
+  definicao: Construo soluções
+  evidencia: Labs do curso de referência completos e passando nos testes; em matemática e física, 80% na prova e exercícios de prova resolvidos
+  carga_tipica: 130–190 h
+- nivel: 5
+  nome: Análise
+  definicao: Identifico limitações e otimizo
+  evidencia: Relatório com previsão, medição e explicação da diferença; uma otimização justificada pela medição
+  carga_tipica: 180–260 h, com projeto
+- nivel: 6
+  nome: Projeto
+  definicao: Arquiteto soluções completas
+  evidencia: Sistema próprio entregue contra requisitos quantificados, com documento de arquitetura revisado por alguém de fora
+  carga_tipica: 260 h ou mais, com projeto de complexidade alta
+- nivel: 7
+  nome: Pesquisa
+  definicao: Investigo problemas não triviais e produzo conhecimento
+  evidencia: Reprodução de artigo e resultado original submetido à crítica externa (conferência, periódico, workshop ou relatório público com revisão)
+  carga_tipica: Disciplina mais 400 h ou mais de pesquisa
+dificuldade_exercicio:
+- nivel: 1
+  nome: Fixação (iniciante)
+  o_que_treina: Aplicar a definição ou o procedimento diretamente
+- nivel: 2
+  nome: Aplicação (básico)
+  o_que_treina: Combinar dois procedimentos ou escolher qual usar
+- nivel: 3
+  nome: Intermediário
+  o_que_treina: Números maiores, cálculo mental, conferência e estimativa
+- nivel: 4
+  nome: Contexto (avançado)
+  o_que_treina: Problemas de engenharia, física, computação ou ciência de dados
+- nivel: 5
+  nome: Desafio (complexo)
+  o_que_treina: Problemas de olimpíada ou de vestibulares exigentes, que pedem ideia própria

@@ -1,0 +1,6 @@
+data,sessao,lista,item,codigo,competencia,tipo_item,nivel,resultado,classe_erro,ajuda,metodo,observacao
+2026-11-05,2026-11-05-1,,1,NM0,NM0.c01,fixacao,1,certo,,0,,
+2026-11-08,2026-11-08-1,,1,NM0,NM0.c04,fixacao,2,certo,,0,,
+2026-11-15,2026-11-15-1,,1,NM0,NM0.c04,fixacao,2,errado,conceito,2,dividiu na ordem errada,
+2026-11-18,2026-11-18-1,,1,NM0,NM0.c03,fixacao,2,certo,,1,precisou de uma dica,
+2026-11-19,2026-11-19-1,,1,NM0,NM0.c04,fixacao,3,errado,procedimento,1,,

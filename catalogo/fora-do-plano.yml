@@ -1,0 +1,25 @@
+# Disciplinas do Mapa de Formação que ficam fora do plano de estudo próprio, e por quê.
+# Origem: Mapa de Formação, rev. 74, seções 2.10 e 15 (docs/referencia/mapa-de-formacao-rev74.md).
+# Decisão do estudante em 26/11/2026 (DT-03): registrar o motivo em vez de criar arquivo em disciplinas/.
+schema_version: 1
+fora_do_plano:
+- codigo: S3
+  nome: Requisitos e modelagem
+  motivo: coberta_pelo_curso
+  detalhe: A graduação em Engenharia de Software cobre as 30 h previstas; o estudo próprio fica em 0 h (Mapa, seção 15). O PJ20 cita a S3 por isso.
+  ver: docs/referencia/mapa-de-formacao-rev74.md
+- codigo: H4
+  nome: Gestão de projetos de engenharia
+  motivo: coberta_pelo_curso
+  detalhe: A graduação cobre as 20 h previstas (unidades de gestão de projetos e de melhoria de processo); estudo próprio de 0 h (Mapa, seção 15).
+  ver: docs/referencia/mapa-de-formacao-rev74.md
+- codigo: H3
+  nome: Engenharia de produção e economia da tecnologia
+  motivo: coberta_em_parte
+  detalhe: A unidade de sistemas de informação e arquitetura empresarial do curso cobre parte; o resto é complementar (nível 1 a 3) e ficou fora do plano escolhido.
+  ver: docs/referencia/mapa-de-formacao-rev74.md
+- codigo: M13
+  nome: Análise real
+  motivo: fora_do_plano
+  detalhe: Só entra no plano F, de 10 anos (140 h, nível 4); o plano em curso não a inclui.
+  ver: docs/referencia/mapa-de-formacao-rev74.md

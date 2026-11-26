@@ -1,0 +1,20 @@
+# Etapa em curso: 0 = nivelamento; 1 a 18 = semestres do plano. Atualize ao mudar de etapa.
+semestre_atual: 0
+# Máximo de disciplinas ou módulos abertos ao mesmo tempo: 2 no nivelamento e na graduação, 3 depois.
+limite_abertas: 2
+
+# Autonomia: problemas-âncora resolvidos sem ajuda, em dias distintos, exigidos no portão (fase B).
+autonomia_n: 5
+autonomia_dias_distintos: 3
+# Módulos cuja autonomia vem do laboratório conferido por script, não de âncoras de listas (ADR 0010).
+autonomia_por_laboratorio: [NG1]
+# Fixação: parcela de questões de módulos concluídos em cada lista; janela para detectar queda (fase C).
+fixacao_proporcao: 0.2
+fixacao_janela: 3
+fixacao_vencida_dias: 30
+# Mapa de deficiências: últimas N respostas por competência e limites de situação.
+mapa_janela: 10
+mapa_min_forte: 5
+mapa_pct_forte: 85
+mapa_pct_sem_ajuda_forte: 80
+mapa_pct_fraca: 60

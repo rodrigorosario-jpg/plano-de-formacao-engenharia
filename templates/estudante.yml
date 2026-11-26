@@ -1,0 +1,4 @@
+# Copie para registro/estudante.yml na sua branch de estudo (docs/fluxo-git.md).
+schema_version: 1
+branch: estudo_<nome>
+github: <usuário do GitHub>

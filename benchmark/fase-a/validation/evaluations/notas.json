@@ -1,0 +1,146 @@
+{
+ "V-01": {
+  "with_skill": {
+   "precisao": 5,
+   "aderencia": 5,
+   "profundidade": 5,
+   "autonomia": 5,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 5.0
+  },
+  "baseline": {
+   "precisao": 4,
+   "aderencia": 4,
+   "profundidade": 5,
+   "autonomia": 5,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 4,
+   "portoes": [],
+   "nota": 4.5
+  }
+ },
+ "V-02": {
+  "baseline": {
+   "precisao": 4,
+   "aderencia": 4,
+   "profundidade": 4,
+   "autonomia": 5,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 4.35
+  },
+  "with_skill": {
+   "precisao": 4,
+   "aderencia": 5,
+   "profundidade": 5,
+   "autonomia": 5,
+   "seguranca": 5,
+   "clareza": 4,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 4.7
+  }
+ },
+ "V-03": {
+  "with_skill": {
+   "precisao": 5,
+   "aderencia": 5,
+   "profundidade": 4,
+   "autonomia": 5,
+   "seguranca": 5,
+   "clareza": 4,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 4.75
+  },
+  "baseline": {
+   "precisao": 5,
+   "aderencia": 4,
+   "profundidade": 4,
+   "autonomia": 3,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 4,
+   "portoes": [],
+   "nota": 4.25
+  }
+ },
+ "V-04": {
+  "with_skill": {
+   "precisao": 5,
+   "aderencia": 5,
+   "profundidade": 5,
+   "autonomia": 5,
+   "seguranca": 5,
+   "clareza": 4,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 4.95
+  },
+  "baseline": {
+   "precisao": 5,
+   "aderencia": 4,
+   "profundidade": 4,
+   "autonomia": 5,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 4.6
+  }
+ },
+ "V-05": {
+  "with_skill": {
+   "precisao": 5,
+   "aderencia": 5,
+   "profundidade": 4,
+   "autonomia": null,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 4.76
+  },
+  "baseline": {
+   "precisao": 5,
+   "aderencia": 5,
+   "profundidade": 5,
+   "autonomia": null,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 5.0
+  }
+ },
+ "V-06": {
+  "with_skill": {
+   "precisao": 4,
+   "aderencia": 3,
+   "profundidade": 4,
+   "autonomia": null,
+   "seguranca": 5,
+   "clareza": 5,
+   "calibracao": 5,
+   "portoes": [],
+   "nota": 4.0
+  },
+  "baseline": {
+   "precisao": 4,
+   "aderencia": 4,
+   "profundidade": 4,
+   "autonomia": null,
+   "seguranca": 5,
+   "clareza": 4,
+   "calibracao": 3,
+   "portoes": [],
+   "nota": 4.06
+  }
+ }
+}

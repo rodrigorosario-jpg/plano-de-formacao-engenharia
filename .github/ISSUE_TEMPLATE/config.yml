@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Vulnerabilidade ou dado pessoal exposto
+    url: https://github.com/rodrigorosario-jpg/plano-de-formacao-engenharia/security/advisories/new
+    about: Relate em privado. Não abra issue pública.

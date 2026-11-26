@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/disciplina/v1",
+  "title": "Cabeçalho de disciplina ou módulo de nivelamento",
+  "description": "Cabeçalho YAML dos arquivos em disciplinas/. Campos de andamento (status, inicio, diagnostico, nivel_atingido, portao.data, portao.resultado, portao.evidencia) são transitórios: a v1 os aceita e eles saem no Marco 4.",
+  "type": "object",
+  "required": ["codigo", "nome", "eixo", "fase", "ordem", "prerequisitos", "horas_previstas", "nivel_alvo", "portao"],
+  "additionalProperties": false,
+  "properties": {
+    "codigo": {"$ref": "#/$defs/codigo"},
+    "nome": {"$ref": "#/$defs/texto"},
+    "eixo": {"$ref": "#/$defs/texto", "description": "Rótulo listado em rotulos_nas_disciplinas de um eixo de catalogo/eixos.yml."},
+    "fase": {"enum": ["nivelamento", "graduacao", "pos_formatura"]},
+    "bloco": {"$ref": "#/$defs/texto", "description": "Só no nivelamento."},
+    "ordem": {"type": "integer", "minimum": 1},
+    "semestre_inicio": {"$ref": "#/$defs/semestre"},
+    "semestre_fim": {"$ref": "#/$defs/semestre"},
+    "horas_previstas": {"type": "integer", "minimum": 1},
+    "nivel_alvo": {"type": "integer", "minimum": 1, "maximum": 7, "description": "Escala de domínio de catalogo/escalas.yml."},
+    "prerequisitos": {"type": "array", "items": {"$ref": "#/$defs/codigo"}, "uniqueItems": true},
+    "requer_unidades": {"$ref": "#/$defs/unidades"},
+    "unidades_relacionadas": {"$ref": "#/$defs/unidades"},
+    "competencias": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "nome"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z]{1,2}[0-9]+\\.c[0-9]{2}$", "description": "<CÓDIGO>.cNN, com o código do próprio arquivo (conferido por scripts/esquema.py)."},
+          "nome": {"$ref": "#/$defs/texto"}
+        }
+      }
+    },
+    "status": {"enum": ["nao_iniciada", "em_andamento", "no_portao", "concluida", "dispensada", "em_revisao"], "description": "Transitório."},
+    "inicio": {"$ref": "#/$defs/data_ou_nulo", "description": "Transitório."},
+    "diagnostico": {"anyOf": [{"type": "null"}, {"type": "number", "minimum": 0, "maximum": 100}], "description": "Transitório. % de acertos no diagnóstico do bloco."},
+    "nivel_atingido": {"anyOf": [{"type": "null"}, {"type": "integer", "minimum": 1, "maximum": 7}], "description": "Transitório."},
+    "portao": {
+      "type": "object",
+      "required": ["criterio"],
+      "additionalProperties": false,
+      "properties": {
+        "criterio": {"$ref": "#/$defs/texto"},
+        "data": {"$ref": "#/$defs/data_ou_nulo", "description": "Transitório."},
+        "resultado": {"type": ["null", "string", "number"], "description": "Transitório."},
+        "evidencia": {"type": ["null", "string"], "description": "Transitório."}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"fase": {"const": "nivelamento"}}, "required": ["fase"]},
+      "then": {
+        "required": ["bloco"],
+        "properties": {"semestre_inicio": {"const": 0}, "semestre_fim": {"const": 0}}
+      },
+      "else": {
+        "required": ["semestre_inicio", "semestre_fim"],
+        "properties": {"bloco": {"not": {}, "description": "bloco só existe no nivelamento."}}
+      }
+    }
+  ],
+  "$defs": {
+    "codigo": {"type": "string", "pattern": "^[A-Z]{1,2}[0-9]+$"},
+    "texto": {"type": "string", "minLength": 1},
+    "semestre": {"type": "integer", "minimum": 0, "maximum": 18},
+    "unidades": {"type": "array", "items": {"type": "string", "pattern": "^U[0-9]+\\.[0-9]+$"}, "uniqueItems": true},
+    "data_ou_nulo": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"}]}
+  }
+}

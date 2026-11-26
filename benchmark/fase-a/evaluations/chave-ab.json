@@ -1,0 +1,90 @@
+{
+ "A-L1-01": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L1-02": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L1-03": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "A-L2-01": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L2-02": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "A-L2-03": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "A-L3-01": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L3-02": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L3-03": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "A-L3-04": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L4-01": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "A-L4-02": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L5-01": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "A-L5-02": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "A-L5-03": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "A-L1-04": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "V-01": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "V-02": {
+  "A": "baseline",
+  "B": "with_skill"
+ },
+ "V-03": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "V-04": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "V-05": {
+  "A": "with_skill",
+  "B": "baseline"
+ },
+ "V-06": {
+  "A": "with_skill",
+  "B": "baseline"
+ }
+}

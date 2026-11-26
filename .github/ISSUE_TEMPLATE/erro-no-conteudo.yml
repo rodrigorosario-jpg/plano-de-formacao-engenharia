@@ -1,0 +1,23 @@
+name: Erro no conteúdo
+description: Gabarito errado, pré-requisito incoerente, link quebrado ou texto confuso.
+labels: ["conteudo"]
+body:
+  - type: input
+    id: onde
+    attributes:
+      label: Onde
+      description: Arquivo e, se for o caso, número do exercício.
+      placeholder: exercicios/NM0/gabarito.md, questão 98
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: O que está errado
+    validations:
+      required: true
+  - type: textarea
+    id: correcao
+    attributes:
+      label: O que deveria ser
+      description: Se souber, com a fonte.

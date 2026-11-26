@@ -1,0 +1,16 @@
+# Modelo de verificação: exercicios/<código>/verificacao/<n>-<nome do arquivo>.yml
+# Uma entrada por item da lista. Campos de todo item: item, competencia (ID do cabeçalho do módulo),
+# tipo_item (fluencia, metodos, simplificacao, armadilha_simplificacao, critico, ancora, fixacao ou diagnostico)
+# e nivel (1 a 5, tabela de AVALIACOES.md). Depois, uma única forma de conferir, independente do gabarito:
+#   calculo            expressão aritmética exata; F(a, b) é a fração a/b
+#   predicado          condição sobre a variável, testada em todo o intervalo; exige exatamente uma resposta
+#   codigo             programa Python curto; a saída (print) é comparada ao gabarito
+#   revisao + nota     item não calculável; independente (outro revisor) ou releitura (o próprio autor)
+# Detalhes em docs/verificacao-gabaritos.md. Apague estes comentários e os itens que não usar.
+lista: exercicios/<código>/<n>-<nome do arquivo>.md
+gabarito: exercicios/<código>/gabaritos/<n>-<nome do arquivo>.md
+itens:
+  - {item: 1, competencia: <código>.c01, tipo_item: <tipo>, nivel: <1 a 5>, calculo: "<expressão, como 3500 - 37 * 48>"}
+  - {item: 2, competencia: <código>.c02, tipo_item: <tipo>, nivel: <1 a 5>, predicado: "<condição, como n % 13 == 12 and n // 13 == 25>", variavel: n, intervalo: [0, 20000]}
+  - {item: 3, competencia: <código>.c03, tipo_item: <tipo>, nivel: <1 a 5>, codigo: "<programa, como print(sum(range(1, 11)))>"}
+  - {item: 4, competencia: <código>.c04, tipo_item: critico, nivel: <1 a 5>, revisao: <independente ou releitura>, nota: "<quem conferiu, quando (DD/MM/AAAA) e o que foi checado>"}

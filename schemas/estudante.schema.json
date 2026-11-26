@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/estudante/v1",
+  "title": "Quem estuda nesta branch",
+  "description": "registro/estudante.yml: identifica a branch de estudo e a conta do GitHub que assina os commits dela (docs/fluxo-git.md). Só existe na branch de estudo.",
+  "type": "object",
+  "required": ["schema_version", "branch", "github"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "branch": {"type": "string", "pattern": "^estudo_[a-z0-9][a-z0-9_-]*$", "description": "Nome da branch de estudo: estudo_<nome>."},
+    "github": {"type": "string", "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$", "description": "Usuário do GitHub; os commits saem com <usuário>@users.noreply.github.com."}
+  }
+}

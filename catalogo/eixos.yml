@@ -1,0 +1,115 @@
+# Eixos A a H do plano e as disciplinas de cada um.
+# Origem: Mapa de Formação, rev. 74, seção 2.2 a 2.9. Este arquivo é agora a fonte de verdade.
+# `rotulos_nas_disciplinas` são os valores do campo `eixo` em disciplinas/; `sem_arquivo` são códigos do Mapa sem arquivo em disciplinas/.
+# M0 foi aposentada (catalogo/aposentados.yml) e por isso não aparece aqui.
+# Os módulos de nivelamento (NM, NL, NF) não pertencem a estes eixos; a ordem deles está em NIVELAMENTO.md.
+schema_version: 1
+eixos:
+- codigo: A
+  nome: Matemática
+  rotulos_nas_disciplinas:
+  - Matemática
+  disciplinas:
+  - M1
+  - M2
+  - M3
+  - M4
+  - M5
+  - M6
+  - M7
+  - M8
+  - M9
+  - M10
+  - M11
+  - M12
+  sem_arquivo:
+  - M13
+- codigo: B
+  nome: Física e fundamentos de engenharia
+  rotulos_nas_disciplinas:
+  - Engenharia elétrica e de computação
+  - Física
+  disciplinas:
+  - F1
+  - F2
+  - F3
+  - F4
+  - E1
+  - E2
+  - E3
+  - E4
+  - E5
+  - E6
+- codigo: C
+  nome: Ciência da Computação
+  rotulos_nas_disciplinas:
+  - Ciência da computação
+  - Programação
+  disciplinas:
+  - P1
+  - P2
+  - C1
+  - C2
+  - C3
+  - C4
+  - C5
+  - C6
+  - C7
+  - C8
+  - C9
+  - C10
+- codigo: D
+  nome: Engenharia de Software
+  rotulos_nas_disciplinas:
+  - Engenharia de software
+  disciplinas:
+  - S1
+  - S2
+  - S4
+  - S5
+  - S6
+  sem_arquivo:
+  - S3
+- codigo: E
+  nome: Engenharia de Dados
+  rotulos_nas_disciplinas:
+  - Engenharia de dados
+  disciplinas:
+  - D1
+  - D2
+  - D3
+  - D4
+  - D5
+  - D6
+- codigo: F
+  nome: Inteligência Artificial e Ciência de Dados
+  rotulos_nas_disciplinas:
+  - Inteligência artificial
+  disciplinas:
+  - A1
+  - A2
+  - A3
+  - A4
+  - A5
+- codigo: G
+  nome: Infraestrutura
+  rotulos_nas_disciplinas:
+  - Infraestrutura
+  disciplinas:
+  - G1
+  - G2
+  - G3
+  - G4
+  - G5
+- codigo: H
+  nome: Engenharia generalista e interdisciplinar
+  rotulos_nas_disciplinas:
+  - Interdisciplinar
+  disciplinas:
+  - H1
+  - H2
+  - H5
+  - H6
+  sem_arquivo:
+  - H3
+  - H4

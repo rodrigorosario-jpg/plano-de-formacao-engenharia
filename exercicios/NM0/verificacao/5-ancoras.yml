@@ -1,0 +1,9 @@
+lista: exercicios/NM0/5-ancoras.md
+gabarito: exercicios/NM0/gabaritos/5-ancoras.md
+itens:
+  - {item: 1, competencia: NM0.c05, tipo_item: ancora, nivel: 4, predicado: "r * 1000 >= 250 * 18 and (r - 1) * 1000 < 250 * 18", variavel: r, intervalo: [0, 20000]}
+  - {item: 2, competencia: NM0.c04, tipo_item: ancora, nivel: 4, calculo: "1440 * 25 / 60"}
+  - {item: 3, competencia: NM0.c03, tipo_item: ancora, nivel: 4, calculo: "3500 - 37 * 48 - 12 * 135"}
+  - {item: 4, competencia: NM0.c05, tipo_item: ancora, nivel: 4, calculo: "-(-1000 // 42) * 42 - 1000"}
+  - {item: 5, competencia: NM0.c04, tipo_item: ancora, nivel: 5, predicado: "n // 13 == 25 and n % 13 == 12", variavel: n, intervalo: [0, 20000]}
+  - {item: 6, competencia: NM0.c01, tipo_item: ancora, nivel: 5, predicado: "100 * m - 4950 == 15050 and m >= 99", variavel: m, intervalo: [0, 20000]}

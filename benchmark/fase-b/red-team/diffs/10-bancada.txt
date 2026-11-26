@@ -1,0 +1,9 @@
+TESTE DE BANCADA (fora da skill): NM1 em_revisao sem nunca ter concluído; NM0 concluida com portao.data 2026-11-19, sem prova registrada nem âncoras
+ERRO: NM1: está 'em_revisao' sem o portão de NM0 cumprido
+ERRO: NM1: 'em_revisao' sem data e resultado do portão
+PROGRESSO.md atualizado: 86 disciplinas e módulos.
+MAPA.md atualizado.
+ PROGRESSO.md                                    | 18 ++++++++++--------
+ disciplinas/NM0-operacoes-fundamentais.md       |  6 +++---
+ disciplinas/NM1-numeros-inteiros-e-operacoes.md |  2 +-
+ 3 files changed, 14 insertions(+), 12 deletions(-)

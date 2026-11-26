@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/aposentados/v1",
+  "title": "catalogo/aposentados.yml",
+  "description": "Códigos aposentados: não têm arquivo, não são pré-requisito e não são reaproveitados.",
+  "type": "object",
+  "required": ["schema_version", "aposentados"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "aposentados": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["codigo", "motivo"],
+        "additionalProperties": false,
+        "properties": {
+          "codigo": {"type": "string", "pattern": "^[A-Z]{1,2}[0-9]+$"},
+          "nome": {"type": "string", "minLength": 1},
+          "motivo": {"type": "string", "minLength": 1},
+          "ver": {"type": "string", "minLength": 1, "description": "Caminho, a partir da raiz, do documento que explica a troca."}
+        }
+      }
+    }
+  }
+}

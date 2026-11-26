@@ -1,0 +1,57 @@
+### progresso.py
+PROGRESSO.md atualizado: 86 disciplinas e módulos.
+MAPA.md atualizado.
+### git status --short
+ M MAPA.md
+ M PROGRESSO.md
+ M registro/avaliacoes.md
+ M registro/respostas.csv
+### git diff
+diff --git a/MAPA.md b/MAPA.md
+index 0275559..db76679 100644
+--- a/MAPA.md
++++ b/MAPA.md
+@@ -48,8 +48,8 @@ Autonomia: 0/5 âncoras em 0/3 dias
+ | Competência | Situação | Acertos recentes | Erro mais frequente | Última resposta |
+ | --- | --- | --- | --- | --- |
+ | NM2.c01 Conceito e equivalência de frações | ⚪ sem_dados | — | — | — |
+-| NM2.c02 Simplificação de frações | ⚪ sem_dados | — | — | — |
+-| NM2.c03 Operações com frações | 🔴 fraca | 0/1 | conceito | 2026-11-20 |
++| NM2.c02 Simplificação de frações | ⚪ sem_dados | 1/1 | — | 2026-11-20 |
++| NM2.c03 Operações com frações | 🔴 fraca | 2/3 | conceito | 2026-11-20 |
+ | NM2.c04 Decimais e conversão entre fração e decimal | ⚪ sem_dados | — | — | — |
+ | NM2.c05 Dízimas periódicas | ⚪ sem_dados | — | — | — |
+ | NM2.c06 Comparação e arredondamento | ⚪ sem_dados | — | — | — |
+diff --git a/PROGRESSO.md b/PROGRESSO.md
+index 17c2265..9e74691 100644
+--- a/PROGRESSO.md
++++ b/PROGRESSO.md
+@@ -47,7 +47,7 @@ A estimativa usa o diagnóstico de cada módulo: 20% das horas máximas com 85%
+ | --- | --- | --- | --- | --- | --- | --- |
+ | [NM0 Operações fundamentais](disciplinas/NM0-operacoes-fundamentais.md) | — | ⚪ Liberada | 40 / 0 / 40 | — | — | — |
+ | [NM1 Números inteiros e operações](disciplinas/NM1-numeros-inteiros-e-operacoes.md) | NM0 ⬜ | 🔒 Bloqueada | 20 / 0 / 20 | 0% | diagnostico 0% (18/11) | — |
+-| [NM2 Frações e números decimais](disciplinas/NM2-fracoes-e-numeros-decimais.md) | NM1 ⬜ | 🔒 Bloqueada | 25 / 0 / 25 | 0% | diagnostico 0% (18/11) | — |
++| [NM2 Frações e números decimais](disciplinas/NM2-fracoes-e-numeros-decimais.md) | NM1 ⬜ | 🔒 Bloqueada | 25 / 0 / 25 | 0% | exercicios 0% (20/11) | — |
+ | [NM3 Potenciação, radiciação e notação científica](disciplinas/NM3-potenciacao-radiciacao-e-notacao-cientifica.md) | NM2 ⬜ | 🔒 Bloqueada | 20 / 0 / 20 | 0% | diagnostico 0% (18/11) | — |
+ | [NM4 Expressões numéricas e algébricas](disciplinas/NM4-expressoes-numericas-e-algebricas.md) | NM3 ⬜ | 🔒 Bloqueada | 20 / 0 / 20 | 0% | diagnostico 0% (18/11) | — |
+ | [NM5 Razão, proporção, regra de três e porcentagem](disciplinas/NM5-razao-proporcao-regra-de-tres-e-porcentagem.md) | NM2 ⬜, NM4 ⬜ | 🔒 Bloqueada | 30 / 0 / 30 | 0% | diagnostico 0% (18/11) | — |
+diff --git a/registro/avaliacoes.md b/registro/avaliacoes.md
+index 3b5b7b7..bdd590a 100644
+--- a/registro/avaliacoes.md
++++ b/registro/avaliacoes.md
+@@ -9,3 +9,5 @@ Uma linha por avaliação. Tipos: `diagnostico`, `exercicios`, `saida`, `revisao
+ | 2026-11-18 | NM3 | diagnostico | 0 | 5 | Diagnóstico do bloco A; nenhuma questão dominada |  |
+ | 2026-11-18 | NM4 | diagnostico | 0 | 5 | Diagnóstico do bloco A; nenhuma questão dominada |  |
+ | 2026-11-18 | NM5 | diagnostico | 0 | 5 | Diagnóstico do bloco A; nenhuma questão dominada |  |
++| 2026-11-20 | NM2 | exercicios | 3 | 3 | Respostas dadas depois de ver o gabarito (ajuda 4) | exercicios/NM2/9-fixture-fracoes.md |
++| 2026-11-20 | NM2 | exercicios | 0 | 1 | Resumo da sessão 2026-11-20-1 (linha que já estava no CSV sem resumo) | exercicios/NM2/9-fixture-fracoes.md |
+diff --git a/registro/respostas.csv b/registro/respostas.csv
+index 5090b86..ee74fe8 100644
+--- a/registro/respostas.csv
++++ b/registro/respostas.csv
+@@ -1,2 +1,5 @@
+ data,sessao,lista,item,codigo,competencia,tipo_item,nivel,resultado,classe_erro,ajuda,metodo,observacao
+ 2026-11-20,2026-11-20-1,exercicios/NM2/9-fixture-fracoes.md,1,NM2,NM2.c03,fluencia,1,errado,conceito,0,somou numeradores e denominadores,
++2026-11-20,2026-11-20-2,exercicios/NM2/9-fixture-fracoes.md,1,NM2,NM2.c03,fluencia,1,certo,,4,copiou após ver gabarito,viu a resposta antes de responder
++2026-11-20,2026-11-20-2,exercicios/NM2/9-fixture-fracoes.md,2,NM2,NM2.c02,simplificacao,1,certo,,4,copiou após ver gabarito,viu a resposta antes de responder
++2026-11-20,2026-11-20-2,exercicios/NM2/9-fixture-fracoes.md,3,NM2,NM2.c03,fluencia,1,certo,,4,copiou após ver gabarito,viu a resposta antes de responder

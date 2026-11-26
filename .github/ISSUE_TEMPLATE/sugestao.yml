@@ -1,0 +1,17 @@
+name: Sugestão
+description: Conteúdo novo, mudança no plano ou melhoria nos scripts.
+labels: ["sugestao"]
+body:
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Proposta
+    validations:
+      required: true
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Por quê
+      description: Que problema resolve ou que lacuna cobre.
+    validations:
+      required: true

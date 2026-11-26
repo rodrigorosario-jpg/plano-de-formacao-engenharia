@@ -1,0 +1,5 @@
+### progresso.py
+PROGRESSO.md atualizado: 86 disciplinas e módulos.
+MAPA.md atualizado.
+### git status --short
+### git diff

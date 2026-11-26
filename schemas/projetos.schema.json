@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/projetos/v1",
+  "title": "catalogo/projetos.yml",
+  "description": "Projetos integradores (PJ).",
+  "type": "object",
+  "required": ["schema_version", "projetos"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "projetos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["codigo", "nome", "complexidade", "competencia", "momento"],
+        "anyOf": [{"required": ["disciplinas"]}, {"required": ["disciplinas_texto"]}],
+        "description": "Cada projeto tem disciplinas ou disciplinas_texto.",
+        "additionalProperties": false,
+        "properties": {
+          "codigo": {"type": "string", "pattern": "^PJ[0-9]+$"},
+          "nome": {"type": "string", "minLength": 1},
+          "disciplinas": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z]{1,2}[0-9]+$"}},
+          "disciplinas_texto": {"type": "string", "minLength": 1},
+          "complexidade": {"enum": ["Baixa", "Média", "Alta", "Muito alta"]},
+          "competencia": {"type": "string", "minLength": 1},
+          "momento": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

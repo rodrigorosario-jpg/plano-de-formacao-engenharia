@@ -1,0 +1,244 @@
+# Unidades do curso de Engenharia de Software citadas pelas disciplinas.
+# Origem: Mapa de Formação, rev. 74, seção 16.4. Este arquivo é agora a fonte de verdade.
+# Pré-requisitos entre unidades foram deduzidos das ementas; a instituição pode declarar outros.
+schema_version: 1
+unidades:
+- codigo: U1.2
+  nome: Python, Dados e Desenvolvimento com IA
+  semestre: 1
+  nivel: Base
+  prerequisitos: []
+  apoio: P1 aprofunda nas manhãs
+- codigo: U6.1
+  nome: Matemática Discreta, Lógica e Matrizes
+  semestre: 1
+  nivel: Base
+  prerequisitos_texto: 'Nivelamento: NM0 a NM6, NM18 e NL1'
+  apoio: M1 nas manhãs
+- codigo: U2.1
+  nome: Modelagem Conceitual e Relacional
+  semestre: 1
+  nivel: Base
+  prerequisitos: []
+- codigo: U9.3
+  nome: Escrita Técnica
+  semestre: 1
+  nivel: Base
+  prerequisitos: []
+  apoio: Usada em todos os relatórios
+- codigo: U9.4
+  nome: Colaboração e Feedback
+  semestre: 1
+  nivel: Base
+  prerequisitos: []
+- codigo: U2.2
+  nome: SQL e Banco Físico
+  semestre: 2
+  nivel: Base
+  prerequisitos:
+  - U2.1
+- codigo: U1.4
+  nome: POO e Repositório
+  semestre: 2
+  nivel: Intermediário
+  prerequisitos:
+  - U1.2
+- codigo: U1.3
+  nome: Estruturas de Dados
+  semestre: 2
+  nivel: Intermediário
+  prerequisitos:
+  - U1.2
+  - U6.1
+  - P1
+  apoio: PJ1 como trabalho da unidade
+- codigo: U3.1
+  nome: Elicitação de Requisitos
+  semestre: 2
+  nivel: Base
+  prerequisitos: []
+- codigo: U9.1
+  nome: Ética e Proteção de Dados
+  semestre: 2
+  nivel: Base
+  prerequisitos: []
+- codigo: U3.2
+  nome: Requisitos Verificáveis
+  semestre: 3
+  nivel: Intermediário
+  prerequisitos:
+  - U3.1
+- codigo: U3.3
+  nome: UML, SysML e BPMN
+  semestre: 3
+  nivel: Intermediário
+  prerequisitos:
+  - U3.1
+  - U1.4
+- codigo: U2.3
+  nome: APIs
+  semestre: 3
+  nivel: Intermediário
+  prerequisitos:
+  - U2.2
+  - U1.4
+- codigo: U7.1
+  nome: Testes com Automação
+  semestre: 3
+  nivel: Intermediário
+  prerequisitos:
+  - U1.4
+- codigo: U8.1
+  nome: Sistemas de Informação
+  semestre: 3
+  nivel: Base
+  prerequisitos: []
+- codigo: U2.4
+  nome: Integridade, Testes e Documentação de Dados
+  semestre: 4
+  nivel: Intermediário
+  prerequisitos:
+  - U2.3
+  - U7.1
+- codigo: U3.4
+  nome: Do Problema ao Protótipo
+  semestre: 4
+  nivel: Intermediário
+  prerequisitos:
+  - U3.2
+  - U3.3
+- codigo: U1.1
+  nome: Produto Completo com Scrum
+  semestre: 4
+  nivel: Intermediário
+  prerequisitos:
+  - U1.4
+  - U2.2
+  - U3.2
+- codigo: U9.2
+  nome: Efeitos Sociais e Acessibilidade
+  semestre: 4
+  nivel: Base
+  prerequisitos: []
+- codigo: U6.2
+  nome: Probabilidade, Estatística e Otimização
+  semestre: 5
+  nivel: Intermediário
+  prerequisitos:
+  - U6.1
+  - M3
+  apoio: M6 completa vem no semestre 6
+- codigo: U6.4
+  nome: Custo de Algoritmos
+  semestre: 5
+  nivel: Avançado
+  prerequisitos:
+  - U1.3
+  - U6.1
+  - M2
+  apoio: C1 fecha no mesmo semestre
+- codigo: U7.2
+  nome: Inspeção, Verificação e Validação
+  semestre: 5
+  nivel: Intermediário
+  prerequisitos:
+  - U7.1
+  - U3.2
+- codigo: U8.2
+  nome: Gestão de Projetos e Riscos
+  semestre: 5
+  nivel: Intermediário
+  prerequisitos:
+  - U8.1
+  - U1.1
+- codigo: U4.1
+  nome: Memória, Processos, Concorrência e Redes
+  semestre: 5
+  nivel: Intermediário
+  prerequisitos:
+  - U1.3
+  - G1
+  apoio: P2 nas manhãs
+- codigo: U4.2
+  nome: Segurança do Tráfego e Operação
+  semestre: 6
+  nivel: Intermediário
+  prerequisitos:
+  - U4.1
+- codigo: U6.3
+  nome: Teoria da Computação, Autômatos e Grafos
+  semestre: 6
+  nivel: Avançado
+  prerequisitos:
+  - U6.1
+  - U6.4
+  - M2
+  - C1
+- codigo: U5.1
+  nome: Estilos e Padrões de Arquitetura
+  semestre: 6
+  nivel: Avançado
+  prerequisitos:
+  - U2.3
+  - U3.3
+  - U1.1
+- codigo: U5.2
+  nome: Atributos de Qualidade e Decisões
+  semestre: 6
+  nivel: Avançado
+  prerequisitos:
+  - U5.1
+- codigo: U4.3
+  nome: Integração com Serviços e Nuvem
+  semestre: 7
+  nivel: Avançado
+  prerequisitos:
+  - U4.2
+  - U2.3
+- codigo: U4.4
+  nome: Testes de Integração e Simulação de Falhas
+  semestre: 7
+  nivel: Avançado
+  prerequisitos:
+  - U4.3
+  - U7.2
+- codigo: U5.3
+  nome: Fronteira e Responsabilidades
+  semestre: 7
+  nivel: Avançado
+  prerequisitos:
+  - U5.2
+- codigo: U7.3
+  nome: Métricas e Maturidade
+  semestre: 7
+  nivel: Avançado
+  prerequisitos:
+  - U7.2
+  - U8.2
+  - U6.2
+- codigo: U5.4
+  nome: Incremento Arquitetado
+  semestre: 8
+  nivel: Avançado
+  prerequisitos:
+  - U5.3
+  - U4.4
+- codigo: U8.3
+  nome: DevOps e Observabilidade
+  semestre: 8
+  nivel: Avançado
+  prerequisitos:
+  - U7.1
+  - U4.3
+- codigo: U7.4
+  nome: Verificação de Incremento e Melhoria
+  semestre: 8
+  nivel: Avançado
+  prerequisitos:
+  - U7.3
+- codigo: U8.4
+  nome: Projeto Integrado
+  semestre: 8
+  nivel: Avançado
+  prerequisitos_texto: U5.4 e U8.3 em andamento; todo o resto
+  apoio: Conta como PJ11 ou PJ20 se cumprir 11.2

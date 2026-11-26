@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/plano/v1",
+  "title": "plano.yml",
+  "description": "Configuração do plano. Valores ausentes vêm de PADROES em scripts/config.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "semestre_atual": {"type": "integer", "minimum": 0, "maximum": 18},
+    "limite_abertas": {"type": "integer", "minimum": 1},
+    "autonomia_n": {"type": "integer", "minimum": 1},
+    "autonomia_dias_distintos": {"type": "integer", "minimum": 1},
+    "autonomia_por_laboratorio": {"type": "array", "items": {"type": "string", "pattern": "^[A-Z]+[0-9]+$"}, "uniqueItems": true, "description": "Módulos cuja autonomia vem de um laboratório conferido por script (ADR 0010)."},
+    "fixacao_proporcao": {"type": "number", "minimum": 0, "maximum": 1},
+    "fixacao_janela": {"type": "integer", "minimum": 1},
+    "fixacao_vencida_dias": {"type": "integer", "minimum": 1},
+    "mapa_janela": {"type": "integer", "minimum": 1},
+    "mapa_min_forte": {"type": "integer", "minimum": 1},
+    "mapa_pct_forte": {"type": "number", "minimum": 0, "maximum": 100},
+    "mapa_pct_sem_ajuda_forte": {"type": "number", "minimum": 0, "maximum": 100},
+    "mapa_pct_fraca": {"type": "number", "minimum": 0, "maximum": 100}
+  }
+}

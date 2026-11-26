@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/fora-do-plano/v1",
+  "title": "catalogo/fora-do-plano.yml",
+  "description": "Disciplinas do Mapa de Formação que existem nos eixos (sem_arquivo), mas ficam fora do plano de estudo próprio, com o motivo.",
+  "type": "object",
+  "required": ["schema_version", "fora_do_plano"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "fora_do_plano": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["codigo", "motivo", "detalhe"],
+        "additionalProperties": false,
+        "properties": {
+          "codigo": {"type": "string", "pattern": "^[A-Z]{1,2}[0-9]+$"},
+          "nome": {"type": "string", "minLength": 1},
+          "motivo": {"enum": ["coberta_pelo_curso", "coberta_em_parte", "fora_do_plano"]},
+          "detalhe": {"type": "string", "minLength": 1},
+          "ver": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

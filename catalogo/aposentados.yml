@@ -1,0 +1,8 @@
+# Códigos aposentados: não têm arquivo em disciplinas/, não aparecem como pré-requisito e não são reaproveitados.
+# `ver` é o caminho, a partir da raiz, do documento que explica a troca.
+schema_version: 1
+aposentados:
+- codigo: M0
+  nome: Pré-cálculo
+  motivo: Substituída pelo nivelamento (módulos NM, NF e NL)
+  ver: NIVELAMENTO.md

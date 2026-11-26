@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/escalas/v1",
+  "title": "catalogo/escalas.yml",
+  "description": "As duas escalas do plano: domínio da disciplina (1 a 7) e dificuldade do exercício (1 a 5).",
+  "type": "object",
+  "required": ["schema_version", "dominio", "dificuldade_exercicio"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "dominio": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["nivel", "nome", "definicao", "evidencia", "carga_tipica"],
+        "additionalProperties": false,
+        "properties": {
+          "nivel": {"type": "integer", "minimum": 1, "maximum": 7},
+          "nome": {"type": "string", "minLength": 1},
+          "definicao": {"type": "string", "minLength": 1},
+          "evidencia": {"type": "string", "minLength": 1},
+          "carga_tipica": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "dificuldade_exercicio": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["nivel", "nome", "o_que_treina"],
+        "additionalProperties": false,
+        "properties": {
+          "nivel": {"type": "integer", "minimum": 1, "maximum": 5},
+          "nome": {"type": "string", "minLength": 1},
+          "o_que_treina": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

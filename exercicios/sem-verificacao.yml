@@ -1,0 +1,17 @@
+# Listas sem arquivo .yml de verificação, registradas como exceção.
+# Toda lista exercicios/<código>/<n>-<nome>.md precisa de verificacao/<n>-<nome>.yml ou de uma entrada aqui.
+# scripts/catalogo.py dá erro se uma entrada já tiver .yml ou apontar para uma lista que não existe.
+schema_version: 1
+listas:
+- lista: exercicios/NM0/1-adicao.md
+  motivo: &antigas Uma das quatro listas antigas do NM0 (440 itens), anteriores ao formato com verificação. Os itens nunca contam como âncora.
+  ver: skills/estudo-guiado/references/correcao.md
+- lista: exercicios/NM0/2-subtracao.md
+  motivo: *antigas
+  ver: skills/estudo-guiado/references/correcao.md
+- lista: exercicios/NM0/3-multiplicacao.md
+  motivo: *antigas
+  ver: skills/estudo-guiado/references/correcao.md
+- lista: exercicios/NM0/4-divisao.md
+  motivo: *antigas
+  ver: skills/estudo-guiado/references/correcao.md

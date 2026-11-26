@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/sem-verificacao/v1",
+  "title": "exercicios/sem-verificacao.yml",
+  "description": "Exceções registradas: listas sem arquivo .yml de verificação.",
+  "type": "object",
+  "required": ["schema_version", "listas"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "listas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["lista", "motivo"],
+        "additionalProperties": false,
+        "properties": {
+          "lista": {"type": "string", "pattern": "^exercicios/[^/]+/[^/]+\\.md$"},
+          "motivo": {"type": "string", "minLength": 1},
+          "ver": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

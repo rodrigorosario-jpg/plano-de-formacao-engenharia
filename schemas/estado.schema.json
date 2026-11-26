@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/estado/v1",
+  "title": "Andamento de quem estuda",
+  "description": "registro/estado.yml: andamento de cada módulo e disciplina, só na branch de estudo (ADR 0004). Só entram módulos com algum valor fora do padrão; um campo ausente vale o padrão (status nao_iniciada, demais nulos). Sem o arquivo, tudo está no padrão.",
+  "type": "object",
+  "required": ["schema_version", "modulos"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "modulos": {
+      "type": "object",
+      "propertyNames": {"pattern": "^[A-Z]{1,2}[0-9]+$"},
+      "additionalProperties": {"$ref": "#/$defs/andamento"}
+    }
+  },
+  "$defs": {
+    "andamento": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {"enum": ["nao_iniciada", "em_andamento", "no_portao", "concluida", "dispensada", "em_revisao"]},
+        "inicio": {"$ref": "#/$defs/data_ou_nulo"},
+        "diagnostico": {"anyOf": [{"type": "null"}, {"type": "number", "minimum": 0, "maximum": 100}], "description": "% de acertos no diagnóstico do bloco."},
+        "nivel_atingido": {"anyOf": [{"type": "null"}, {"type": "integer", "minimum": 1, "maximum": 7}], "description": "Escala de domínio de catalogo/escalas.yml."},
+        "portao": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "data": {"$ref": "#/$defs/data_ou_nulo"},
+            "resultado": {"type": ["null", "string", "number"]},
+            "evidencia": {"type": ["null", "string"]}
+          }
+        }
+      }
+    },
+    "data_ou_nulo": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"}]}
+  }
+}

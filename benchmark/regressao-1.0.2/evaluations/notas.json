@@ -1,0 +1,56 @@
+{
+ "regressao": {
+  "A-L4-01": {
+   "with_skill": {
+    "precisao": 5,
+    "aderencia": 5,
+    "profundidade": 4,
+    "autonomia": 5,
+    "seguranca": 5,
+    "clareza": 4,
+    "calibracao": 5,
+    "portoes": [],
+    "nota": 4.75
+   }
+  },
+  "BV-02": {
+   "with_skill": {
+    "precisao": 5,
+    "aderencia": 5,
+    "profundidade": 5,
+    "autonomia": 5,
+    "seguranca": 5,
+    "clareza": 5,
+    "calibracao": 5,
+    "portoes": [],
+    "nota": 5.0
+   }
+  },
+  "BV-05": {
+   "with_skill": {
+    "precisao": 5,
+    "aderencia": 4,
+    "profundidade": 4,
+    "autonomia": 5,
+    "seguranca": 5,
+    "clareza": 4,
+    "calibracao": 5,
+    "portoes": [],
+    "nota": 4.55
+   }
+  },
+  "V-03": {
+   "with_skill": {
+    "precisao": 5,
+    "aderencia": 4,
+    "profundidade": 4,
+    "autonomia": 5,
+    "seguranca": 5,
+    "clareza": 4,
+    "calibracao": 5,
+    "portoes": [],
+    "nota": 4.55
+   }
+  }
+ }
+}

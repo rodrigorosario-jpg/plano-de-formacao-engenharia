@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plano-de-estudos/schemas/eixos/v1",
+  "title": "catalogo/eixos.yml",
+  "description": "Eixos A a H e as disciplinas de cada um.",
+  "type": "object",
+  "required": ["schema_version", "eixos"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "eixos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["codigo", "nome", "rotulos_nas_disciplinas", "disciplinas"],
+        "additionalProperties": false,
+        "properties": {
+          "codigo": {"type": "string", "pattern": "^[A-H]$"},
+          "nome": {"type": "string", "minLength": 1},
+          "rotulos_nas_disciplinas": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "disciplinas": {"$ref": "#/$defs/codigos"},
+          "sem_arquivo": {"$ref": "#/$defs/codigos"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "codigos": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z]{1,2}[0-9]+$"}}
+  }
+}
