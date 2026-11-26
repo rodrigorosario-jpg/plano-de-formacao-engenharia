@@ -14,7 +14,7 @@ import sys
 
 import yaml
 
-from autonomia import ancoras_validas, autonomia, validar_autonomia
+from autonomia import ancoras_validas, autonomia, validar_autonomia, validar_laboratorio
 from config import PADROES, carregar_config
 from fixacao import avisos_fixacao, sortear_fixacao
 from mapa import gerar_mapa
@@ -39,7 +39,7 @@ RITMO_REFERENCIA = 24  # h por semana, usado enquanto não houver registro seman
 
 FEITAS = {"concluida", "dispensada", "em_revisao"}
 ABERTOS = {"em_andamento", "no_portao"}
-TIPOS_AVALIACAO = {"diagnostico", "exercicios", "saida", "revisao"}
+TIPOS_AVALIACAO = {"diagnostico", "exercicios", "saida", "revisao", "laboratorio"}
 REVISOES_DIAS = [7, 30, 90]
 ROTULO = {
     "concluida": "🟢 Concluída",
@@ -109,6 +109,7 @@ def carregar_avaliacoes():
             "pct": round(100 * numero(cel[3]) / total) if total else None,
             "acertos": numero(cel[3]),
             "total": total,
+            "observacoes": cel[5] if len(cel) > 5 else "",
             "lista": cel[6] if len(cel) > 6 and cel[6] else None,
         })
     return avs
@@ -265,7 +266,7 @@ def validar(disc, horas, avs, limite, respostas=(), autonomia_linhas=None, cfg=N
             erros.append(f"registro semanal: código desconhecido {cod}")
     for a in avs:
         if a["tipo"] not in TIPOS_AVALIACAO:
-            erros.append(f"avaliações ({a['data']}): tipo '{a['tipo']}' inválido; use diagnostico, exercicios, saida ou revisao")
+            erros.append(f"avaliações ({a['data']}): tipo '{a['tipo']}' inválido; use diagnostico, exercicios, saida, revisao ou laboratorio")
         for cod in a["codigos"]:
             if cod not in disc:
                 erros.append(f"avaliações ({a['data']}): código desconhecido {cod}")
@@ -278,6 +279,7 @@ def validar(disc, horas, avs, limite, respostas=(), autonomia_linhas=None, cfg=N
     erros.extend(conferir_resumos(avs, list(respostas)))
     linhas_aut = ancoras_validas(list(respostas), RAIZ) if autonomia_linhas is None else autonomia_linhas
     erros.extend(validar_autonomia(disc, linhas_aut, cfg or PADROES))
+    erros.extend(validar_laboratorio(disc, list(avs), cfg or PADROES))
     avisos.extend(avisos_fixacao(disc, competencias(disc), list(respostas) if fixacao_linhas is None else fixacao_linhas,
                                  cfg or PADROES, hoje or dt.date.today()))
     for ciclo in ciclos(disc):
@@ -498,7 +500,7 @@ def main():
         SAIDA.write_text(gerar(disc, semanas, horas, avs, erros, avisos, limite, sem_atual, hoje) + "\n", encoding="utf-8")
         print(f"PROGRESSO.md atualizado: {len(disc)} disciplinas e módulos.")
         usadas = ancoras_validas(respostas_para_mapa(respostas, erros), RAIZ)
-        SAIDA_MAPA.write_text(gerar_mapa(disc, competencias(disc), usadas, cfg, hoje) + "\n", encoding="utf-8")
+        SAIDA_MAPA.write_text(gerar_mapa(disc, competencias(disc), usadas, cfg, hoje, avs=avs) + "\n", encoding="utf-8")
         print("MAPA.md atualizado" + ("." if usadas or not respostas else " sem respostas: corrija o registro/respostas.csv"))
     sys.exit(1 if erros else 0)
 

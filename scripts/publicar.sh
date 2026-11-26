@@ -24,7 +24,8 @@ prefixo="Publica a main privada"
 erro() { echo "ERRO: $*" >&2; exit 1; }
 
 git fetch -q origin main
-git fetch -q "$remoto" main 2>/dev/null || true
+# --prune: se o público foi apagado e recriado, a ref antiga "$remoto/main" não pode sobrar.
+git fetch -q --prune "$remoto" 2>/dev/null || true
 
 # 1. Dados de estudo nunca saem do privado.
 for proibido in registro/estado.yml registro/estudante.yml; do

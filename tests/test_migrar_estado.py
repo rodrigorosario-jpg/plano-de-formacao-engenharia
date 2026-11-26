@@ -72,7 +72,7 @@ def montar(tmp_path):
     pasta = tmp_path / "disciplinas"
     pasta.mkdir(parents=True)
     arquivos = {
-        "XA0": modulo("XA0", 1, status="em_andamento", inicio="2026-11-23"),
+        "XA0": modulo("XA0", 1, status="em_andamento", inicio="2026-01-05"),
         "XA1": modulo("XA1", 2, diag="0"),
         "XA2": modulo("XA2", 4, status="concluida", inicio="2026-10-01", diag="72.5", data="2026-11-01",
                       resultado='"85%"', evidencia='"exercicios/XA2/saida.md"', nivel="3"),
@@ -107,7 +107,7 @@ def test_migra_copia(tmp_path):
     est = yaml.safe_load((raiz / "registro/estado.yml").read_text(encoding="utf-8"))
     assert est["schema_version"] == 1
     assert est["modulos"] == {
-        "XA0": {"status": "em_andamento", "inicio": dt.date(2026, 11, 23)},
+        "XA0": {"status": "em_andamento", "inicio": dt.date(2026, 1, 5)},
         "XA1": {"diagnostico": 0},
         "XA2": {"status": "concluida", "inicio": dt.date(2026, 10, 1), "diagnostico": 72.5, "nivel_atingido": 3,
                 "portao": {"data": dt.date(2026, 11, 1), "resultado": "85%", "evidencia": "exercicios/XA2/saida.md"}},
@@ -160,7 +160,7 @@ def test_estado_existente_e_completado(tmp_path):
     migrar_estado.migrar(raiz)
     mods = estado.carregar_estado(raiz)["modulos"]
     assert list(mods) == ["XA0", "XA1", "XA2", "XB1"]
-    assert mods["XA0"] == {"status": "em_andamento", "inicio": dt.date(2026, 11, 23)} and mods["XB1"] == {"nivel_atingido": 2}
+    assert mods["XA0"] == {"status": "em_andamento", "inicio": dt.date(2026, 1, 5)} and mods["XB1"] == {"nivel_atingido": 2}
 
 
 def test_conflito_com_estado_existente_nao_muda_nada(tmp_path):
@@ -204,7 +204,7 @@ def test_script_autonomo():
 def test_mesmas_regras_que_estado_py():
     assert migrar_estado.CAMPOS == estado.CAMPOS and migrar_estado.CAMPOS_PORTAO == estado.CAMPOS_PORTAO
     assert migrar_estado.PADRAO == estado.PADRAO and migrar_estado.CABECALHO == estado.CABECALHO
-    exemplo = {"NM0": {"status": "concluida", "inicio": dt.date(2026, 11, 23), "diagnostico": 0,
+    exemplo = {"NM0": {"status": "concluida", "inicio": dt.date(2026, 1, 5), "diagnostico": 0,
                        "portao": {"data": dt.date(2026, 11, 30), "resultado": "85%", "evidencia": 'a "b"'}}}
     assert migrar_estado.formatar_estado(exemplo) == estado.formatar_estado(exemplo)
     assert migrar_estado.formatar_estado({}) == estado.formatar_estado({})

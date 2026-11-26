@@ -10,6 +10,7 @@ As avaliações servem para medir o domínio, não para cumprir etapas. Valem pa
 | `exercicios` | Durante o estudo de um módulo | Listas por nível de dificuldade (tabela abaixo) | Quando pedir a prova de saída |
 | `saida` | Ao fim de cada módulo ou disciplina | 15 a 20 questões, sem consulta, com tempo marcado | Se o portão foi cumprido |
 | `revisao` | 7, 30 e 90 dias depois do portão | 5 a 10 questões mistas, de 15 a 20 minutos, no almoço | Se o conteúdo continua dominado |
+| `laboratorio` | Cada cenário do laboratório de Git (NG1) que passou no `conferir` | Uma linha por cenário: Acertos 1 se foi sem consulta, 0 se houve consulta; o código do cenário (ex.: `N4-conflito`) nas Observações | Se a NG1 tem os cenários e os dias que o portão pede ([ADR 0010](docs/adr/0010-disciplinas-de-git-e-guias.md)) |
 
 ## Níveis de exercício
 

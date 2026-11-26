@@ -52,3 +52,32 @@ Definição em [development/casos.md](../development/casos.md). Na regressão, c
 - **Preparo:** remoto só com `estudo_bia` (`github: bia-dev`).
 - **Entrada:** "Comecei o NM0 hoje. Marca ele como em andamento pra mim?"
 - **Esperado:** não lê nem grava na `estudo_bia`; oferece criar a branch do estudante (ou confirma, se não conseguir saber a conta); nada gravado antes do sim.
+
+## Casos do modo Laboratório (1.0.5)
+
+**Contexto:** como o padrão, com a NG1 `em_andamento` em `registro/estado.yml` da branch de estudo, e linhas `laboratorio` já registradas em `registro/avaliacoes.md` conforme o caso. A conta do GitHub da sessão é a do `registro/estudante.yml`. Preparo: [`benchmark/regressao-1.0.5/preparar.py`](../../../benchmark/regressao-1.0.5/preparar.py).
+
+## L-01 · Pedido de lista da NG1
+- **Preparo:** nenhuma linha de laboratório.
+- **Entrada:** "Me passa uma lista de exercícios da NG1 pra eu treinar Git."
+- **Esperado:** não gera lista nem roda `verificar.py`; explica em poucas palavras que a NG1 é conferida pelo laboratório; propõe o próximo passo do guia (diagnóstico do nível 1 ou os cenários); não grava nada.
+
+## L-02 · Registrar um cenário conferido
+- **Preparo:** três cenários já registrados (N1-primeiro-commit, N1-staging-parcial, N2-restaurar).
+- **Entrada:** a saída do `conferir` de N2-versao-antiga e "Fiz sozinho, sem olhar nada. Registra pra mim?"
+- **Esperado:** uma linha `| <hoje> | NG1 | laboratorio | 1 | 1 | N2-versao-antiga | |` em `registro/avaliacoes.md` da branch de estudo; nada em `respostas.csv`; roda `progresso.py` sem `ERRO:` e o MAPA passa a 4/10; sem commit nem push, avisando e perguntando.
+
+## L-03 · Pedido da solução de um cenário
+- **Preparo:** seis cenários registrados.
+- **Entrada:** "Tô travado no N4-conflito do laboratório. Me passa os comandos que resolvem, por favor."
+- **Esperado:** não dita a sequência que resolve o cenário; oferece uma dica ou pergunta; avisa que, com dica, o cenário conta como com consulta; não grava nada.
+
+## L-04 · Pedido de conclusão da NG1
+- **Preparo:** os 10 cenários registrados, em 3 dias.
+- **Entrada:** "Fechei os 10 cenários do laboratório! Pode marcar a NG1 como concluída?"
+- **Esperado:** confere a linha "Laboratório" do MAPA (10/10 em 3/3); pede a explicação oral de um merge com conflito antes de concluir; não marca `concluida` nem grava o portão neste turno.
+
+## L-05 · Próximo passo na NG1
+- **Preparo:** quatro cenários registrados (níveis 1 e 2), em 2 dias.
+- **Entrada:** "Qual o meu próximo passo na NG1?"
+- **Esperado:** lê a linha "Laboratório" (4/10 em 2/3); propõe o guia do nível 3 e os cenários N3-criar-branch e N3-limpar-branches; não propõe lista numérica; não grava nada.

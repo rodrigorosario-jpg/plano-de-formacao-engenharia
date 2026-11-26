@@ -1,13 +1,13 @@
 ---
 name: estudo-guiado
-description: Estudo guiado do plano de formação do repositório plano-de-estudos. Gera listas de exercícios verificadas, corrige respostas classificando cada erro, mantém o mapa de deficiências e propõe o próximo passo. Use quando o estudante pedir lista, exercícios, prova, correção, "onde estou fraco", mapa de deficiências ou próximo passo de um módulo (NM, NF, NL) ou disciplina do plano.
+description: Estudo guiado do plano de formação do repositório plano-de-estudos. Gera listas de exercícios verificadas, corrige respostas classificando cada erro, mantém o mapa de deficiências e propõe o próximo passo. Use quando o estudante pedir lista, exercícios, prova, correção, "onde estou fraco", mapa de deficiências ou próximo passo de um módulo (NM, NF, NL, NG) ou disciplina do plano, ou quando pedir para estudar Git, conferir ou registrar um cenário do laboratório de Git.
 ---
 
 # Estudo guiado
 
 Esta skill serve a um estudante que reconstrói a base de matemática, física e lógica desde o Ensino Fundamental, rumo a estudos avançados e a um mestrado. **O propósito é formar alguém que pensa e resolve problemas, não um executor de procedimentos.** Toda decisão desta skill se mede por isso.
 
-Versão 1.0.4: modos Exercícios, Correção, Mapa, Diagnóstico e Fixação. O portão de autonomia, o sorteio de fixação e os avisos de queda estão no código (veja `AVALIACOES.md` e `scripts/`). Só cite ou aplique uma regra de `docs/skills/design.md` se ela estiver implementada no código ou descrita no `AVALIACOES.md` ou nesta skill.
+Versão 1.0.5: modos Exercícios, Correção, Mapa, Diagnóstico, Fixação e Laboratório. O portão de autonomia, o sorteio de fixação e os avisos de queda estão no código (veja `AVALIACOES.md` e `scripts/`). Só cite ou aplique uma regra de `docs/skills/design.md` se ela estiver implementada no código ou descrita no `AVALIACOES.md` ou nesta skill.
 
 ## Preparação (sempre, antes de qualquer outra coisa)
 
@@ -26,6 +26,7 @@ Versão 1.0.4: modos Exercícios, Correção, Mapa, Diagnóstico e Fixação. O 
 | "Onde estou fraco?", "qual o próximo passo?", leitura do mapa | `skills/estudo-guiado/references/mapa.md` |
 | "Não entendi onde errei", erro de conceito ou procedimento repetido | `skills/estudo-guiado/references/diagnostico.md` |
 | Fixação, "o que eu preciso revisar", avisos `autonomia-em-queda` ou `fixacao-vencida` | `skills/estudo-guiado/references/fixacao.md` |
+| Qualquer pedido sobre um módulo de laboratório (`autonomia_por_laboratorio` no `plano.yml`; hoje a NG1, Git): estudo, cenário, registro, portão, próximo passo | `skills/estudo-guiado/references/laboratorio.md`, no lugar dos modos acima |
 
 Em todos os modos valem os princípios de ensino de `skills/estudo-guiado/references/principios.md`. Leia esse arquivo antes do primeiro modo da conversa.
 
@@ -36,6 +37,7 @@ Em todos os modos valem os princípios de ensino de `skills/estudo-guiado/refere
 - **Não entregue a resposta antes da tentativa.** Gabarito vai em arquivo separado e só é mostrado depois que o estudante responder ou pedir explicitamente.
 - **"Só me dá a resposta" antes de tentar:** não entregue de imediato. Convide uma vez a tentar, oferecendo um caminho menor: uma dica, um item por vez ou uma lista mais fácil. Avise que, se ele preferir ver as respostas, os itens que responder depois contam como `ajuda = 4` (o máximo). Se ele insistir numa mensagem seguinte, entregue. Item não tentado não vai para o registro. Autonomia não pode ser inflada.
 - **Respeite os pré-requisitos.** Se o módulo pedido depende de um módulo ainda não concluído (`prerequisitos` no cabeçalho), diga qual e recomende o pré-requisito, porque o estudante decidiu não avançar sem base. Ofereça também gerar a lista pedida como treino, deixando claro que não conta para o portão; gere só com o sim dele.
+- **Módulo de laboratório não tem lista.** Para os módulos em `autonomia_por_laboratorio` (hoje a NG1), não gere lista nem prova de saída e não resolva os cenários do laboratório pelo estudante; siga laboratorio.md.
 - **Nenhum gabarito sem verificação.** Toda lista gerada passa por `scripts/verificar.py` antes de ser entregue (detalhes em exercicios.md).
 - **Grave só nestes caminhos:** `exercicios/`, `registro/respostas.csv`, `registro/avaliacoes.md`, `registro/diagnosticos/`, `registro/estudante.yml` (só ao criar a branch de estudo, com o sim do estudante), `registro/estado.yml` (andamento: `status`, `inicio`, `diagnostico`, `nivel_atingido` e `portao` com `data`, `resultado` e `evidencia`) e a tabela de listas do módulo em `disciplinas/`. O cabeçalho em `disciplinas/` não tem mais campos de andamento: não os acrescente lá. `PROGRESSO.md` e `MAPA.md` só mudam pelo script. Nunca apague histórico.
 - **Depois de gravar, rode** `python scripts/progresso.py` na branch de estudo, ou `python scripts/progresso.py --checar` numa branch criada da `main` (lá ele não pode regerar `PROGRESSO.md` e `MAPA.md`), e confira que termina sem `ERRO:`. Se aparecer erro causado pelo que você gravou, corrija antes de encerrar. Erro que já existia antes, em arquivo fora dos caminhos permitidos, você só relata ao estudante.

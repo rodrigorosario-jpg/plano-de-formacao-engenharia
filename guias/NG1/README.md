@@ -66,7 +66,7 @@ python scripts/laboratorio_git.py conferir N4-conflito /tmp/lab-conflito
 
 O script só prepara pastas vazias ou novas, fora de qualquer repositório, e nunca apaga arquivos seus. Para refazer um cenário, prepare numa pasta nova.
 
-O portão da NG1 pede os 10 cenários resolvidos **sem consulta**, em pelo menos 3 dias distintos. Anote a data de cada `conferir` que passou na evidência do portão, em `registro/estado.yml` da sua branch de estudo.
+O portão da NG1 pede os 10 cenários resolvidos **sem consulta**, em pelo menos 3 dias distintos. Cada `conferir` que passou vira uma linha `laboratorio` em `registro/avaliacoes.md` da sua branch de estudo, com o código do cenário nas Observações e Acertos 1 se foi sem consulta (a skill de estudo guiado faz isso com você). O `MAPA.md` mostra quantos cenários e dias faltam.
 
 ## Regra de ouro dos exercícios
 

@@ -1,7 +1,7 @@
 """Mapa de deficiências: situação de cada competência a partir de registro/respostas.csv."""
 from collections import Counter
 
-from autonomia import autonomia
+from autonomia import _cenarios_do_laboratorio, autonomia, laboratorio
 
 PESO = {"certo": 1.0, "parcial": 0.5}
 FEITAS = {"concluida", "dispensada", "em_revisao"}
@@ -51,7 +51,7 @@ def lacunas_prerequisitos(disc, comps, sit):
     return sorted(pares)
 
 
-def gerar_mapa(disc, comps, linhas, cfg, hoje):
+def gerar_mapa(disc, comps, linhas, cfg, hoje, avs=()):
     por_comp = {cid: [l for l in linhas if l.get("competencia") == cid] for cid in comps}
     sit = {cid: situacao(ls, cfg, disc[comps[cid]["codigo"]]["status"] in FEITAS) for cid, ls in por_comp.items()}
     cont = Counter(sit.values())
@@ -72,7 +72,9 @@ def gerar_mapa(disc, comps, linhas, cfg, hoje):
     for cod in modulos:
         n, dias = autonomia(linhas, cod, cfg)
         if cod in (cfg.get("autonomia_por_laboratorio") or []):
-            linha_aut = "Autonomia: pelo laboratório (scripts/laboratorio_git.py), registrada na evidência do portão"
+            nl, dl = laboratorio(list(avs), cod)
+            linha_aut = (f"Laboratório: {nl}/{len(_cenarios_do_laboratorio())} cenários sem consulta em "
+                         f"{dl}/{cfg['autonomia_dias_distintos']} dias (scripts/laboratorio_git.py)")
         else:
             linha_aut = f"Autonomia: {n}/{cfg['autonomia_n']} âncoras em {dias}/{cfg['autonomia_dias_distintos']} dias"
         out += [f"### {cod} · {disc[cod].get('nome', '')}", "", linha_aut, "",

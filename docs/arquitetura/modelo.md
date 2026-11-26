@@ -73,7 +73,7 @@ Valores de `fase` hoje: `nivelamento`, `graduacao` e `pos_formatura`. Os valores
 ```yaml
 schema_version: 1
 modulos:
-  NM0: {status: em_andamento, inicio: 2026-11-23}
+  NM0: {status: em_andamento, inicio: 2026-01-05}
   NM1: {diagnostico: 0}
 ```
 

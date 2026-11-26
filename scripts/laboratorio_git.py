@@ -532,7 +532,8 @@ def main(argv):
         for f in falhas:
             print(f"- {f}")
         return 1
-    print(f"Cenário {argv[1]} resolvido. Anote a data na evidência do portão da NG1.")
+    print(f"Cenário {argv[1]} resolvido. Registre em registro/avaliacoes.md, na branch de estudo: uma linha laboratorio "
+          f"com {argv[1]} nas Observações (Acertos 1 se foi sem consulta).")
     return 0
 
 
