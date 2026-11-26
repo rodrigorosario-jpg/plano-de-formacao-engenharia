@@ -26,6 +26,8 @@ Os limites estão em `plano.yml`; use os valores de lá se tiverem mudado.
 4. **Tudo 🟢 forte no módulo:** propor a prova de saída (se ainda não foi feita) ou avançar de nível.
 5. **Muitas ⚪ sem_dados:** propor uma lista curta de sondagem cobrindo essas competências.
 
+Para um módulo de laboratório (a NG1), a ordem é outra e segue a linha "Laboratório" do mapa (veja laboratorio.md, seção 6).
+
 Explique o porquê da sugestão em uma ou duas frases, citando a linha do mapa que a justifica. A decisão é do estudante.
 
 ## 4. O que não fazer

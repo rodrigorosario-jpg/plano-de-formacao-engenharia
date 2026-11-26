@@ -91,9 +91,9 @@ def test_carregar_disciplinas_aplica_estado(tmp_path, monkeypatch):
     assert disc["XA1"]["status"] == "nao_iniciada" and disc["XA1"]["portao"]["data"] is None
     (tmp_path / "registro").mkdir()
     (tmp_path / "registro/estado.yml").write_text(
-        "schema_version: 1\nmodulos:\n  XA1: {status: em_andamento, inicio: 2026-11-23}\n", encoding="utf-8")
+        "schema_version: 1\nmodulos:\n  XA1: {status: em_andamento, inicio: 2026-01-05}\n", encoding="utf-8")
     disc = progresso.carregar_disciplinas()
-    assert disc["XA1"]["status"] == "em_andamento" and disc["XA1"]["inicio"] == dt.date(2026, 11, 23)
+    assert disc["XA1"]["status"] == "em_andamento" and disc["XA1"]["inicio"] == dt.date(2026, 1, 5)
     assert disc["XA2"]["status"] == "nao_iniciada" and disc["XA1"]["arquivo"] == "disciplinas/XA1.md"
 
 

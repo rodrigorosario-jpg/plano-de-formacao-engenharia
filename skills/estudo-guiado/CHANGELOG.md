@@ -1,5 +1,15 @@
 # Changelog · estudo-guiado
 
+## 1.0.5 · 26/11/2026
+
+**Reinstale a skill:** o `SKILL.md` mudou.
+
+- **Modo Laboratório** (`SKILL.md`, `references/laboratorio.md`, `mapa.md`): para os módulos em `autonomia_por_laboratorio` (hoje a NG1, Git), a skill guia pelos guias de `guias/NG1/` e pelo laboratório de `scripts/laboratorio_git.py`. Não gera listas, não resolve cenários pelo estudante e registra cada cenário conferido como uma linha `laboratorio` em `registro/avaliacoes.md` (Acertos 1 = sem consulta). O portão da NG1 pede os 10 cenários em 3 dias distintos (o `--checar` confere) e uma explicação oral de um merge com conflito, conduzida pela skill.
+- Exemplo de data em `correcao.md` trocado por uma data genérica.
+
+Regressão: A-L4-01 4,80 · V-03 4,75 · BV-02 4,80 · BV-05 4,80, nenhum portão violado; casos do modo Laboratório L-01 a L-05 aprovados ([relatório](../../benchmark/regressao-1.0.5/benchmark_report.md)).
+
+
 ## 1.0.4 · 26/11/2026
 
 **Reinstale a skill:** o `SKILL.md` mudou.

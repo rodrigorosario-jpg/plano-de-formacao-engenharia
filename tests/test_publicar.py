@@ -163,3 +163,15 @@ def test_remoto_local_nunca_chama_gh(repos, tmp_path):
     assert r.returncode == 0, r.stderr
     assert not marca.exists()
     assert "Abra o pull request" in r.stdout
+
+
+def test_publico_recriado_vazio_nao_conta_como_divergencia(repos, tmp_path):
+    """Se o público foi apagado e recriado vazio, a ref antiga publico/main não pode bloquear a publicação."""
+    work, publico = repos
+    assert _publicar(work, "--enviar").returncode == 0
+    _git(work, "fetch", "-q", "publico")
+    shutil.rmtree(publico)
+    _git(tmp_path, "init", "-q", "--bare", "-b", "main", str(publico))
+    r = _publicar(work, "--enviar")
+    assert r.returncode == 0, r.stderr
+    assert "Primeira publicação" in r.stdout

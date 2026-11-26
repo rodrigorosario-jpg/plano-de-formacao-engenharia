@@ -33,9 +33,9 @@ def test_estado_ausente_e_vazio(tmp_path):
 
 
 def test_carrega_datas_como_datas(tmp_path):
-    raiz = raiz_com(tmp_path, estado="schema_version: 1\nmodulos:\n  XA1: {status: em_andamento, inicio: 2026-11-23}\n")
+    raiz = raiz_com(tmp_path, estado="schema_version: 1\nmodulos:\n  XA1: {status: em_andamento, inicio: 2026-01-05}\n")
     est = carregar_estado(raiz)
-    assert est["modulos"]["XA1"] == {"status": "em_andamento", "inicio": dt.date(2026, 11, 23)}
+    assert est["modulos"]["XA1"] == {"status": "em_andamento", "inicio": dt.date(2026, 1, 5)}
 
 
 def test_aplicar_sem_estado_preenche_padroes():
@@ -104,7 +104,7 @@ def test_padroes_e_campos():
 
 @pytest.mark.parametrize("modulos", [
     {},
-    {"NM0": {"status": "em_andamento", "inicio": dt.date(2026, 11, 23)}, "NM1": {"diagnostico": 0}},
+    {"NM0": {"status": "em_andamento", "inicio": dt.date(2026, 1, 5)}, "NM1": {"diagnostico": 0}},
     {"NM0": {"status": "concluida", "portao": {"data": dt.date(2026, 11, 1), "resultado": "85%",
                                                 "evidencia": "prova: \"saída\", 1/2"}}, "C1": {"diagnostico": 72.5}},
 ])
@@ -117,7 +117,7 @@ def test_formatar_estado_ida_e_volta(tmp_path, modulos):
 
 
 def test_status_sem_aspas_e_palavras_reservadas_com_aspas():
-    texto = formatar_estado({"NM0": {"status": "em_andamento", "inicio": dt.date(2026, 11, 23)},
+    texto = formatar_estado({"NM0": {"status": "em_andamento", "inicio": dt.date(2026, 1, 5)},
                              "NM1": {"portao": {"resultado": "no", "evidencia": "null"}}})
-    assert "  NM0: {status: em_andamento, inicio: 2026-11-23}\n" in texto
+    assert "  NM0: {status: em_andamento, inicio: 2026-01-05}\n" in texto
     assert '"no"' in texto and '"null"' in texto

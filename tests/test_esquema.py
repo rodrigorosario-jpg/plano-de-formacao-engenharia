@@ -85,8 +85,8 @@ def test_v1_do_cabecalho_fica_como_historico():
 
 
 def test_para_json_converte_datas_em_qualquer_nivel():
-    d = {"a": dt.date(2026, 11, 23), "b": [{"c": dt.date(2026, 1, 2)}], "n": None}
-    assert para_json(d) == {"a": "2026-11-23", "b": [{"c": "2026-01-02"}], "n": None}
+    d = {"a": dt.date(2026, 1, 5), "b": [{"c": dt.date(2026, 1, 2)}], "n": None}
+    assert para_json(d) == {"a": "2026-01-05", "b": [{"c": "2026-01-02"}], "n": None}
     json.dumps(para_json(d))
 
 
@@ -122,7 +122,7 @@ def escrever_estado(raiz, texto):
 def test_estado_valido_e_ausente(tmp_path):
     raiz = repo(tmp_path)
     assert validar_esquemas(raiz) == []
-    escrever_estado(raiz, "schema_version: 1\nmodulos:\n  XA1: {status: em_andamento, inicio: 2026-11-23}\n"
+    escrever_estado(raiz, "schema_version: 1\nmodulos:\n  XA1: {status: em_andamento, inicio: 2026-01-05}\n"
                           "  XB1: {diagnostico: 0, portao: {data: 2026-11-30, resultado: \"85%\", evidencia: null}}\n")
     assert validar_esquemas(raiz) == []
     escrever_estado(raiz, "schema_version: 1\nmodulos: {}\n")

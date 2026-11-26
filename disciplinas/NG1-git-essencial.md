@@ -65,6 +65,6 @@ Versionar o próprio trabalho sem medo de perder nada: commitar, ler o históric
 
 Os 10 cenários do laboratório de Git (níveis 1 a 5) resolvidos sem consulta, em pelo menos 3 dias distintos, e uma explicação oral de um merge com conflito.
 
-A autonomia deste módulo vem do laboratório, não de problemas-âncora de listas: o `plano.yml` registra a exceção em `autonomia_por_laboratorio` ([ADR 0010](../docs/adr/0010-disciplinas-de-git-e-guias.md)). Anote na evidência do portão, em `registro/estado.yml`, as datas em que cada cenário passou no `conferir`.
+A autonomia deste módulo vem do laboratório, não de problemas-âncora de listas: o `plano.yml` registra a exceção em `autonomia_por_laboratorio` ([ADR 0010](../docs/adr/0010-disciplinas-de-git-e-guias.md)). Cada cenário que passa no `conferir` vira uma linha `laboratorio` em `registro/avaliacoes.md`, na branch de estudo: Acertos 1 se foi sem consulta, 0 se houve consulta, e o código do cenário nas Observações (por exemplo `| 2026-12-01 | NG1 | laboratorio | 1 | 1 | N4-conflito | |`). O `MAPA.md` mostra quantos cenários e dias já foram cumpridos, e o `--checar` recusa o portão concluído sem os 10 cenários em 3 dias distintos.
 
 ## Anotações
